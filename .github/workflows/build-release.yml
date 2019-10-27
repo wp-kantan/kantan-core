@@ -1,0 +1,25 @@
+name: Build Release
+
+on: release
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@master
+      - name: Install composer dependencies
+        uses: MilesChou/composer-action@master
+        with:
+          args: install 
+      - name: Archive Release
+        uses: thedoctor0/zip-release@master
+        with:
+          filename: '.github/release.zip'
+          exclusions: '*.git* build'
+      - name: Upload to release
+        uses: JasonEtco/upload-to-release@master
+        with:
+          args: .github/release.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
