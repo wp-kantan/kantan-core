@@ -28,7 +28,6 @@ if (!class_exists('Roots\\Sage\\Container')) {
 require(KANTAN_SRC_DIRECTORY . '/app/helpers.php');
 require(KANTAN_SRC_DIRECTORY . '/app/setup.php');
 require(KANTAN_SRC_DIRECTORY . '/app/filters.php');
-require(KANTAN_SRC_DIRECTORY . '/lib/tgm_plugin_activation.php');
 
 /**
  * Here's what's happening with these hooks:
