@@ -16,7 +16,6 @@ add_action('after_setup_theme', function () {
      */
     if (!defined('WP_ENV'))
         define('WP_ENV', 'production');
-    \PrimeTime\WordPress\PluginManifest\Activation::set(get_template_directory() . '/plugin-manifest.yml', WP_ENV);
 
     /**
      * Flush Kantan Compiler Cache
